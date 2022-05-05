@@ -61,8 +61,10 @@ if (!choices.length) {
 
 	dataArray.forEach((data, i) => {
 		if (i === 0) {
-			console.log("# Benchmarks");
-			console.log(`duration: ${data.duration}s\nconnections: ${data.connections}\npipelining: ${data.pipelining}\n`);
+			console.log("# Benchmarks\n");
+			console.log(
+				`duration: ${data.duration}s\n\nconnections: ${data.connections}\n\npipelining: ${data.pipelining}\n\n`
+			);
 		}
 		const beBold = false;
 		table.push([
