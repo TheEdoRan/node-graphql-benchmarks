@@ -24,6 +24,7 @@
 		"@graphql-yoga/node": "^2.5.0",
 		"apollo-server-core": "^3.7.0",
 		"apollo-server-express": "^3.7.0",
+		"apollo-server-fastify": "^3.7.0",
 		"autocannon": "^7.9.0",
 		"autocannon-compare": "^0.4.0",
 		"chalk": "^4.1.0",
