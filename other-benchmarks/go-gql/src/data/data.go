@@ -1,6 +1,8 @@
 package data
 
 import (
+	"strconv"
+
 	"github.com/fibs7000/go-graphql-benchmark/graph/model"
 	"github.com/jaswdr/faker"
 )
@@ -14,7 +16,7 @@ func GenData() []*model.Author {
 
 		for k := 0; k < 3; k++ {
 			book := model.Book{
-				ID:       faker.UUID().V4(),
+				ID:       strconv.Itoa(k),
 				Name:     faker.Person().LastName(),
 				NumPages: faker.IntBetween(100, 10000),
 			}
@@ -22,7 +24,7 @@ func GenData() []*model.Author {
 		}
 
 		author := model.Author{
-			ID:      faker.UUID().V4(),
+			ID:      strconv.Itoa(i),
 			Name:    faker.Person().FirstName(),
 			Company: faker.Company().BS(),
 			Books:   books,
