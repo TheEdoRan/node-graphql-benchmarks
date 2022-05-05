@@ -5,8 +5,6 @@ package graph
 
 import (
 	"context"
-	"crypto/md5"
-	"encoding/hex"
 
 	"github.com/fibs7000/go-graphql-benchmark/graph/generated"
 	"github.com/fibs7000/go-graphql-benchmark/graph/model"
@@ -15,7 +13,7 @@ import (
 
 func (r *authorResolver) Md5(ctx context.Context, obj *model.Author) (string, error) {
 
-	return GetMD5Hash(obj.Name), nil
+	return "test123test123test123test123", nil
 }
 
 func (r *queryResolver) Authors(ctx context.Context) ([]*model.Author, error) {
@@ -30,8 +28,3 @@ func (r *Resolver) Query() generated.QueryResolver { return &queryResolver{r} }
 
 type authorResolver struct{ *Resolver }
 type queryResolver struct{ *Resolver }
-
-func GetMD5Hash(text string) string {
-	hash := md5.Sum([]byte(text))
-	return hex.EncodeToString(hash[:])
-}
