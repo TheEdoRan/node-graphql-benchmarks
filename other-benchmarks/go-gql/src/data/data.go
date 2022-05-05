@@ -2,6 +2,7 @@ package data
 
 import (
 	"strconv"
+	"time"
 
 	"github.com/fibs7000/go-graphql-benchmark/graph/model"
 	"github.com/jaswdr/faker"
@@ -30,6 +31,7 @@ func GenData() []*model.Author {
 			Books:   books,
 		}
 		authors = append(authors, &author)
+		time.Sleep(2000 * time.Millisecond)
 	}
 
 	return authors
