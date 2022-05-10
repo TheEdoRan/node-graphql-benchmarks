@@ -10,8 +10,10 @@ const { createApolloSchema } = require("../lib/schemas/createApolloSchema");
 const app = express();
 const httpServer = http.createServer(app);
 
+const schema = createApolloSchema();
+
 const server = new ApolloServer({
-	schema: createApolloSchema(),
+	schema,
 	plugins: [ApolloServerPluginDrainHttpServer({ httpServer })],
 	executor,
 });

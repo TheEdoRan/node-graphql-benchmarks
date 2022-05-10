@@ -17,8 +17,11 @@ const fastifyAppClosePlugin = (app) => {
 };
 
 const app = fastify();
+
+const schema = createApolloSchema();
+
 const server = new ApolloServer({
-	schema: createApolloSchema(),
+	schema,
 	csrfPrevention: true,
 	plugins: [fastifyAppClosePlugin(app), ApolloServerPluginDrainHttpServer({ httpServer: app.server })],
 	executor,
