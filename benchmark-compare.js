@@ -72,7 +72,7 @@ if (!choices.length) {
 				beBold,
 				chalk.blue(
 					options.commandlineMdTable
-						? `[${data.server}](https://github.com/TheEdoRan/node-graphql-benchmarks/tree/main/benchmarks/${data.server}.js)`
+						? `[${data.server}](https://github.com/TheEdoRan/node-graphql-benchmarks/blob/no-go/benchmarks/${data.server}.js)`
 						: data.server
 				)
 			),
